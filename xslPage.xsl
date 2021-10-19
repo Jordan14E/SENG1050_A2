@@ -129,6 +129,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 </li>
             </xsl:for-each>
 
+            <!--Description starts here TODO: Maybe make this section more interesting with div?-->
 
             <xsl:value-of select="description"/>
 
@@ -142,11 +143,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 <xsl:attribute name="href">
                     <xsl:value-of select="URL"/>
                 </xsl:attribute>
+            <xsl:value-of select="URL"/>
             </a>
             <br/>
-
-
         </ul>
+
         <br style="line-height:7cm"/>
     </xsl:template>
 </xsl:stylesheet>
