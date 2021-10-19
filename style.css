@@ -3,7 +3,6 @@
 	Student Number: c3350651
 	Date file created: 6/9/21
 */
-
 /*Tag styling*/
 html{
 	background-image: url('Images/background.png');
@@ -111,14 +110,6 @@ ul{
 	height:2.5cm;
 	width:auto;
 	float: left;
-}
-
-#link1{
-	text-align: left;
-}
-
-#link2{
-	text-align: center;
 }
 
 #welcome{
