@@ -8,6 +8,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <head>
                 <meta charset="UTF-8"/>
                 <link  rel= "stylesheet" type ="text/css" href="/style.css"/>		<!--Link to css document for styling-->
+                <style>
+                    html{
+                </style>
                 <title><xsl:text>Jim's cars- </xsl:text><xsl:value-of select="car/@vehicleType"/></title>		<!--Document title-->
             </head>
             <body>
@@ -20,9 +23,18 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <h1 style= "text-align: center">Sports Cars</h1>
                     </xsl:if>
                     <hr/>
-                    <a class="link" id="link1" href="XML/fourWheelDrive.xml">Four Wheel Drives</a>		<!--Link to XML document-->
+
+                    <a class="link" href="../index.html">Home</a>
                     -
-                    <a class="link" id="link2" href="XML/sportsCar.xml">Sports Cars</a>			<!--Link to XML document-->
+                    <xsl:if test="car/@vehicleType = 'fourWheelDrive'">
+                        <a class="link"  href="sportsCar.xml">Sports Cars</a>
+                    </xsl:if>
+                    <xsl:if test="car/@vehicleType = 'sportCar'">
+                        <a class="link"  href="fourWheelDrive.xml">Four Wheel Drives</a>
+                    </xsl:if>
+
+                    <!--TODO: Add data collection page here-->
+
                     <hr/>
                     <br/>
                     <br/>
@@ -55,5 +67,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:text>Detailed information on this car can be found on the manufacturer's website: </xsl:text><xsl:value-of select="URL"/>
 
         </p>
+        <br style="line-height:10cm"/>
     </xsl:template>
 </xsl:stylesheet>
