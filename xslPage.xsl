@@ -54,7 +54,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </xsl:template>
 
     <xsl:template match="car">
-        <h2><xsl:value-of select="make"/> <xsl:value-of select="carModel"/>, <xsl:value-of select="year"/></h2>
+        <h2><xsl:value-of select="make"/><xsl:text> </xsl:text><xsl:value-of select="carModel"/><xsl:text>, </xsl:text><xsl:value-of select="year"/></h2>
         <br/>
         <img alt="Picture not found" class="carPic">
             <xsl:attribute name="src">
@@ -62,11 +62,83 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             </xsl:attribute>
         </img>
         <br/>
-        <p><xsl:value-of select="description"/><br/>
+        <ul>
+            <li>
+            <xsl:text>Price: </xsl:text><xsl:value-of select="cost"/><!--Cost of the vehicle, taken from the XML cost element-->
+            </li>
+            <li>
+            <xsl:text>Safety rating: </xsl:text>                <!--Safety Rating, uses the choose and when functions to determine which star rating
+                                                                    to display based on the child on safetyRating in the XML document -->
+
+            <xsl:choose>
+                <xsl:when test="safetyRating/star1">1 star</xsl:when>
+                <xsl:when test="safetyRating/star2">2 star</xsl:when>
+                <xsl:when test="safetyRating/star3">3 star</xsl:when>
+                <xsl:when test="safetyRating/star4">4 star</xsl:when>
+                <xsl:when test="safetyRating/star5">5 star</xsl:when>
+            </xsl:choose>
+            </li>
+
+            <!--odometerReading-->
+            <li>
+            <xsl:text>Odometer reading: </xsl:text><xsl:value-of select="odometerReading"/>
+            </li>
+            <!--year-->
+            <li>
+            <xsl:text>Year of Production: </xsl:text><xsl:value-of select="year"/>
+            </li>
+
+            <!--fuelType-->
+
+            <li>
+            <xsl:text>Fuel type: </xsl:text><xsl:value-of select="fuelType"/>
+            </li>
+
+            <!--transmission-->
+
+            <li>
+            <xsl:text>Transmission: </xsl:text><xsl:value-of select="transmission"/>
+            </li>
+
+            <!--driveType-->
+
+            <li>
+            <xsl:text>Drive type: </xsl:text><xsl:value-of select="driveType"/>
+            </li>
+
+            <!--state-->
+
+            <li>
+            <xsl:text>State listed: </xsl:text><xsl:value-of select="state"/>
+            </li>
+
+            <!--couponCode-->
+
+
+            <xsl:if test="couponCode != ''">
+                <li>
+                <xsl:text>Jim's Cars coupon Code: </xsl:text><xsl:value-of select="couponCode"/>
+                </li>
+            </xsl:if>
+
+            <!--reviews-->
+
+            <xsl:for-each select="reviews">
+                <li>
+                <xsl:text>Review: </xsl:text><xsl:value-of select="reviews"/>
+                </li>
+            </xsl:for-each>
+
+
+            <xsl:value-of select="description"/>
+
+            <br/>
+
+
 
             <xsl:text>Detailed information on this car can be found on the manufacturer's website: </xsl:text><xsl:value-of select="URL"/>
 
-        </p>
-        <br style="line-height:10cm"/>
+        </ul>
+        <br style="line-height:7cm"/>
     </xsl:template>
 </xsl:stylesheet>
