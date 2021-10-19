@@ -136,7 +136,15 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 
 
-            <xsl:text>Detailed information on this car can be found on the manufacturer's website: </xsl:text><xsl:value-of select="URL"/>
+            <xsl:text>Detailed information on this car can be found on the manufacturer's website:
+            </xsl:text>
+            <a class="link">
+                <xsl:attribute name="href">
+                    <xsl:value-of select="URL"/>
+                </xsl:attribute>
+            </a>
+            <br/>
+
 
         </ul>
         <br style="line-height:7cm"/>
