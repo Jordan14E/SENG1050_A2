@@ -28,7 +28,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                         <xsl:sort select="carModel"/>
                 </xsl:apply-templates>
 
-                <!-- TODO: add address here-->
+                <!-- TODO: add contact here-->
 
             </body>
         </html>
