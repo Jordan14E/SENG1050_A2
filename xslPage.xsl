@@ -7,7 +7,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <html>
             <head>
                 <link rel= "stylesheet" type = "text/css" href="style.css"/>		<!--Link to css document for styling-->
-                <title><xsl:text>Jim's cars- </xsl:text><xsl:value-of select="car/@vehicleType"/>></title>			<!--Document title-->
+                <!--<title><xsl:text>Jim's cars- </xsl:text><xsl:value-of select="car/@vehicleType"/>></title>-->		<!--Document title-->
             </head>
             <body>
                 <div id="head">			<!--Holds page heading, logo and navigation bar-->
