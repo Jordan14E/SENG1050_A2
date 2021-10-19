@@ -37,13 +37,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
                     <hr/>
                     <br/>
-                    <br/>
                 </div>
+                    <br/>
 
+                <div id="list">
                 <xsl:apply-templates select="car">
                         <xsl:sort select="carModel"/>
                 </xsl:apply-templates>
-
+                </div>
                 <!-- TODO: add contact here--><!--maybe?-->
 
             </body>
@@ -62,6 +63,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             </xsl:attribute>
         </img>
         <br/>
+
         <ul>
             <li>
             <xsl:text>Price: </xsl:text><xsl:value-of select="cost"/><!--Cost of the vehicle, taken from the XML cost element-->
@@ -130,10 +132,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             </xsl:for-each>
 
             <!--Description starts here TODO: Maybe make this section more interesting with div?-->
-
-            <xsl:value-of select="description"/>
-
             <br/>
+            <div id="desDiv">
+            <xsl:value-of select="description"/>
+            <br id="doubleBR"/>
+
 
 
 
@@ -145,9 +148,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 </xsl:attribute>
             <xsl:value-of select="URL"/>
             </a>
-            <br/>
+            </div>
         </ul>
-
+        <!--TODO: figure out the spacing for these cars. it looks stupid-->
         <br style="line-height:7cm"/>
     </xsl:template>
 </xsl:stylesheet>

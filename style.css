@@ -88,6 +88,10 @@ ul{
 .description{
 	margin-right:5cm;
 }
+#doubleBR{
+	line-height:2cm
+}
+
 
 /*Styling by identity*/
 
@@ -119,4 +123,8 @@ ul{
 #list{
 	border-style:dashed;
 	border-color:burlywood;
+}
+
+#desDiv{
+	font-size: larger;
 }
