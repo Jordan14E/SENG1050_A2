@@ -7,12 +7,17 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <html>
             <head>
                 <link rel= "stylesheet" type = "text/css" href="style.css"/>		<!--Link to css document for styling-->
-                <!--<title><xsl:text>Jim's cars- </xsl:text><xsl:value-of select="car/@vehicleType"/>></title>-->		<!--Document title-->
+                <title><xsl:text>Jim's cars- </xsl:text><xsl:value-of select="car/@vehicleType"/></title>		<!--Document title-->
             </head>
             <body>
                 <div id="head">			<!--Holds page heading, logo and navigation bar-->
                     <img src="Images/logo.png" alt ="logo" id="logo"/>		<!--"Jim's group logo image-->
-                    <h1 style= "text-align: center"><xsl:value-of select="car/@vehicleType"/></h1>		<!--Main heading for page-->
+                    <xsl:if test="car/@vehicleType = 'fourWheelDrive'">
+                        <h1 style= "text-align: center">Four Wheel Drives</h1>
+                    </xsl:if>
+                    <xsl:if test="car/@vehicleType = 'sportCar'">
+                        <h1 style= "text-align: center">Sports Cars</h1>
+                    </xsl:if>
                     <hr/>
                     <a class="link" id="link1" href="XML/fourWheelDrive.xml">Four Wheel Drives</a>		<!--Link to XML document-->
                     -
