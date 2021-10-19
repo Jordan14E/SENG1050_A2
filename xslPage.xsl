@@ -6,12 +6,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
         <html>
             <head>
-                <link rel= "stylesheet" type = "text/css" href="style.css"/>		<!--Link to css document for styling-->
+                <meta charset="UTF-8"/>
+                <link  rel= "stylesheet" type ="text/css" href="/style.css"/>		<!--Link to css document for styling-->
                 <title><xsl:text>Jim's cars- </xsl:text><xsl:value-of select="car/@vehicleType"/></title>		<!--Document title-->
             </head>
             <body>
                 <div id="head">			<!--Holds page heading, logo and navigation bar-->
-                    <img src="Images/logo.png" alt ="logo" id="logo"/>		<!--"Jim's group logo image-->
+                    <img src="../Images/logo.png" alt ="logo" id="logo"/>		<!--"Jim's group logo image-->
                     <xsl:if test="car/@vehicleType = 'fourWheelDrive'">
                         <h1 style= "text-align: center">Four Wheel Drives</h1>
                     </xsl:if>
