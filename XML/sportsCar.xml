@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Name: sportsCar.xml
+	Author: Jordan Eade
+	Student Number: c3350651
+	Date file created: 5/9/21-->
+	<!DOCTYPE carsForSale	[
+		<!ELEMENT carsForSale (car*)>
+			<!ELEMENT car (make, carModel, description, cost, safetyRating, extras+, odometerReading, year, fuelType, transmission, driveType, state, couponCode?, reviews*, picture+, URL)>
+				<!ELEMENT make (#PCDATA)>
+				<!ELEMENT carModel (#PCDATA)>
+				<!ELEMENT description (#PCDATA)>
+				<!ELEMENT cost (#PCDATA)>
+				<!ELEMENT safetyRating (star1|star2|star3|star4|star5)>
+					<!ELEMENT star1 (#PCDATA)>
+					<!ELEMENT star2 (#PCDATA)>
+					<!ELEMENT star3 (#PCDATA)>
+					<!ELEMENT star4 (#PCDATA)>
+					<!ELEMENT star5 (#PCDATA)>
+				<!ELEMENT extras (options, additionalCost)>
+					<!ELEMENT options (#PCDATA)>
+					<!ELEMENT additionalCost (#PCDATA)>
+				<!ELEMENT odometerReading (#PCDATA)>
+				<!ELEMENT year (#PCDATA)>
+				<!ELEMENT fuelType (#PCDATA)>
+				<!ELEMENT transmission (#PCDATA)>
+				<!ELEMENT driveType (#PCDATA)>
+				<!ELEMENT state (#PCDATA)>
+				<!ELEMENT couponCode (#PCDATA)>
+				<!ELEMENT reviews (#PCDATA)>
+				<!ELEMENT picture (#PCDATA)>
+				<!ELEMENT URL (#PCDATA)>
+		<!ATTLIST car noSeats CDATA #REQUIRED>
+		<!ATTLIST car vehicleType (sportCar|fourWheelDrive) #REQUIRED>
+		<!ENTITY p "Petrol">
+		<!ENTITY d "diesel">
+		<!ENTITY e "Electric">
+		]>
+
+<carsForSale>		<!--Did not include the optional couponCode or review elements in any cars-->
+	<car noSeats= "5" vehicleType="sportCar">
+		<make>Subaru</make>
+		<carModel>WRX</carModel>
+		<description>Subaru wrx 2019, great condition, has full service history, only one owner. Looking for asking price 
+		or swap for something bigger as have young family. Thank you</description>
+		<cost>$52,640</cost>
+		<safetyRating><star5/></safetyRating>
+		<extras>
+			<options>Styling pack</options>
+			<additionalCost>$3,029.56</additionalCost>
+		</extras>
+		<extras>
+			<options>Short throw shifter</options>
+			<additionalCost>$695.83</additionalCost>
+		</extras>
+		<odometerReading>50,000</odometerReading>
+		<year>2019</year>
+		<fuelType>&p;</fuelType>
+		<transmission>6-speed manual</transmission>
+		<driveType>All-wheel Drive</driveType>
+		<state>NSW</state>
+		<picture>../Images/subaru.png</picture>
+		<URL>https://www.subaru.com.au/wrx-and-wrx-sti</URL>
+	</car>
+
+	<car noSeats= "2" vehicleType="sportCar">
+		<make>Ferrari</make>
+		<carModel>Spider 488</carModel>
+		<description>Ferrari spider 488 2020, great condition, has full service history, only one owner. 
+		Serious enquiries only. Thank you</description>
+		<cost>$490,000</cost>
+		<safetyRating><star5/></safetyRating>
+		<extras>
+			<options>Passenger display</options>
+			<additionalCost>$1,000</additionalCost>
+		</extras>
+		<extras>
+			<options>Front suspension lift</options>
+			<additionalCost>$1,500</additionalCost>
+		</extras>
+		<odometerReading>20,000</odometerReading>
+		<year>2020</year>
+		<fuelType>&p;</fuelType>
+		<transmission>7-speed F1 dual clutch</transmission>
+		<driveType>Rear-wheel drive</driveType>
+		<state>VIC</state>
+		<picture>../Images/Ferrari.png</picture>
+		<URL>https://www.ferrari.com/en-EN/auto/488-spider</URL>
+	</car>
+	
+	<car noSeats= "5" vehicleType="sportCar">
+		<make>Toyota</make>
+		<carModel>Supra GT</carModel>
+		<description>Toyota Supra GT 2019, great condition, has full service history, only one owner. 
+		Serious enquiries only. Thank you</description>
+		<cost>$93,755</cost>
+		<safetyRating><star5/></safetyRating>
+		<extras>
+			<options>Welcome light</options>
+			<additionalCost>$500</additionalCost>
+		</extras>
+		<extras>
+			<options>Carbon fiber mirror caps</options>
+			<additionalCost>$200</additionalCost>
+		</extras>
+		<odometerReading>50,000</odometerReading>
+		<year>2019</year>
+		<fuelType>&p;</fuelType>
+		<transmission>6-speed manual</transmission>
+		<driveType>Rear-wheel drive</driveType>
+		<state>QLD</state>
+		<picture>../Images/supra.png</picture>
+		<URL>https://www.toyota.com.au/supra</URL>
+	</car>
+</carsForSale>
+

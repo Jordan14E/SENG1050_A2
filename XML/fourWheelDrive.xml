@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Name: fourWheelDrive.xml
+	Author: Jordan Eade
+	Student Number: c3350651
+	Date file created: 5/9/21-->
+	<!DOCTYPE carsForSale	[
+		<!ELEMENT carsForSale (car*)>
+			<!ELEMENT car (make, carModel, description, cost, safetyRating, extras+, odometerReading, year, fuelType, transmission, driveType, state, couponCode?, reviews*, picture+, URL)>
+				<!ELEMENT make (#PCDATA)>
+				<!ELEMENT carModel (#PCDATA)>
+				<!ELEMENT description (#PCDATA)>
+				<!ELEMENT cost (#PCDATA)>
+				<!ELEMENT safetyRating (star1|star2|star3|star4|star5)>
+					<!ELEMENT star1 (#PCDATA)>
+					<!ELEMENT star2 (#PCDATA)>
+					<!ELEMENT star3 (#PCDATA)>
+					<!ELEMENT star4 (#PCDATA)>
+					<!ELEMENT star5 (#PCDATA)>
+				<!ELEMENT extras (options, additionalCost)>
+					<!ELEMENT options (#PCDATA)>
+					<!ELEMENT additionalCost (#PCDATA)>
+				<!ELEMENT odometerReading (#PCDATA)>
+				<!ELEMENT year (#PCDATA)>
+				<!ELEMENT fuelType (#PCDATA)>
+				<!ELEMENT transmission (#PCDATA)>
+				<!ELEMENT driveType (#PCDATA)>
+				<!ELEMENT state (#PCDATA)>
+				<!ELEMENT couponCode (#PCDATA)>
+				<!ELEMENT reviews (#PCDATA)>
+				<!ELEMENT picture (#PCDATA)>
+				<!ELEMENT URL (#PCDATA)>
+		<!ATTLIST car noSeats CDATA #REQUIRED>
+		<!ATTLIST car vehicleType (sportCar|fourWheelDrive) #REQUIRED>
+		<!ENTITY p "Petrol">
+		<!ENTITY d "diesel">
+		<!ENTITY e "Electric">
+		]>
+
+
+<carsForSale>		<!--Did not include the optional couponCode or review elements in any cars-->
+	<car noSeats="7" vehicleType="fourWheelDrive">
+		<make>Land Rover</make>
+		<carModel>Discovery</carModel>
+		<description>Land Rover Discovery 2021, great condition, has full service history, only one owner. 
+		Serious enquiries only. Thank you</description>	
+		<cost>$111,731</cost>
+		<safetyRating><star5/></safetyRating>
+		<extras>
+			<options>Sliding front sun-roof</options>
+			<additionalCost>$820</additionalCost>
+		</extras>
+		<extras>
+			<options>Meridian surround sound system</options>
+			<additionalCost>$3,740</additionalCost>
+		</extras>
+		<odometerReading>10,000</odometerReading>
+		<year>2021</year>
+		<fuelType>&d;</fuelType>
+		<transmission>8-speed automatic</transmission>
+		<driveType>4-wheel drive</driveType>
+		<state>NSW</state>
+		<picture>../Images/landRover.png</picture>
+		<URL>https://www.landrover.com.au/vehicles/discovery/index.html</URL>
+	</car>
+	
+	<car noSeats="7" vehicleType="fourWheelDrive">
+		<make>Rivian</make>
+		<carModel>R1T</carModel>
+		<description>Rivian R1T 2021, great condition, has full service history, only one owner. 
+		Serious enquiries only. Thank you</description>	
+		<cost>$97,885</cost>
+		<safetyRating><star5/></safetyRating>
+		<extras>
+			<options>Max pack battery</options>
+			<additionalCost>$10,000</additionalCost>
+		</extras>
+		<extras>
+			<options>Camp kitchen pack</options>
+			<additionalCost>$5,000</additionalCost>
+		</extras>
+		<odometerReading>15,000</odometerReading>
+		<year>2021</year>
+		<fuelType>&e;</fuelType>
+		<transmission>1 speed direct</transmission>
+		<driveType>All wheel drive</driveType>
+		<state>WA</state>
+		<picture>../Images/rivian.png</picture>
+		<URL>https://rivian.com/r1t</URL>
+	</car>
+	
+	<car noSeats="7" vehicleType="fourWheelDrive">
+		<make>Toyota</make>
+		<carModel>Fortuner</carModel>
+		<description>Toyota Fortuner 2019, great condition, has full service history, only one owner. 
+		Serious enquiries only. Thank you</description>	
+		<cost>$53,542</cost>
+		<safetyRating><star5/></safetyRating>
+		<extras>
+			<options>Snorkel</options>
+			<additionalCost>$486.36</additionalCost>
+		</extras>
+		<extras>
+			<options>Tinted bonnet protector</options>
+			<additionalCost>$143.12</additionalCost>
+		</extras>
+		<odometerReading>90,000</odometerReading>
+		<year>2019</year>
+		<fuelType>&d;</fuelType>
+		<transmission>6-speed Automatic</transmission>
+		<driveType>Four-wheel drive</driveType>
+		<state>NSW</state>
+		<picture>../Images/fortuner.png</picture>
+		<URL>https://www.toyota.com.au/fortuner</URL>
+	</car>
+	
+</carsForSale>
