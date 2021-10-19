@@ -1,13 +1,11 @@
 <xsl:stylesheet version="1.0"
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
-    <xsl:output method="html"/>
+<xsl:output method="html"/>
 
     <xsl:template match="carsForSale">
 
         <html>
             <head>
-                <meta charset="UTF-8"/>
                 <link rel= "stylesheet" type = "text/css" href="style.css"/>		<!--Link to css document for styling-->
                 <title><xsl:text>Jim's cars- </xsl:text><xsl:value-of select="car/@vehicleType"/>></title>			<!--Document title-->
             </head>
