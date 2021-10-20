@@ -32,6 +32,7 @@ h2{
 h3{
 	font-family:fantasy;
 	font-style: oblique;
+
 }
 
 blockquote{
@@ -67,11 +68,6 @@ a:active{
 	color: GrayText;
 }
 
-ul{
-	list-style-type:square;
-}
-
-
 /*Class styling*/
 
 .carPic{
@@ -92,6 +88,9 @@ ul{
 	line-height:2cm
 }
 
+.homeItem{
+	float: left;
+}
 
 /*Styling by identity*/
 
@@ -127,4 +126,9 @@ ul{
 
 #desDiv{
 	font-size: larger;
+}
+
+#homeList{
+	list-style-type:square;
+	float: left;
 }
