@@ -7,7 +7,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <html>
             <head>
                 <meta charset="UTF-8"/>
-                <link  rel= "stylesheet" type ="text/css" href="/style.css"/>		<!--Link to css document for styling-->
+                <link  rel="stylesheet" type ="text/css" href="../style.css"/>		<!--Link to css document for styling-->
                 <style>
                     html{background-image: url("../Images/background.png");}
                 </style>
