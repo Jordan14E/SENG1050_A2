@@ -9,7 +9,7 @@
 
                 function checkForm(){
 
-                    if(checkEmail()&&checkYear()&&checkTransmission()){
+                    if(checkEmail()&&checkYear()&&checkFuelType()){
                         alert("Thank you for your submission!");
                         return true;
                     }
@@ -46,17 +46,16 @@
 
                 }
 
-                function checkTransmission() {
-                    var buttons = document.carForm.transmission;
+                function checkFuelType() {
+                    var select = document.carForm.fuelType;
 
 
-                    if(buttons[1].checked || buttons[2].checked || buttons[3].checked){
-                        alert("i get here");
-                        return true;
+                    if(select.value == "Please select...") {
+                        alert("Please select a fuel type")
+                        return false;
                     }
                     else{
-                        alert("Please select a transmission")
-                        return false;
+                        return true;
                     }
 
                 }
@@ -96,7 +95,7 @@
                     <!--Email address-->
 
                     <label for="email">Email address: </label>
-                   <input type="text" name="email" id="email">
+                   <input type="text" name="email" id="email"> *
                     <br class="doubleBreak">
 
                     <!--how many previously submitted-->
@@ -137,7 +136,7 @@
                     <br class="doubleBreak">
                     <!--year-->
                     <label for="year">Year of production: </label>
-                    <input type="number" name="year" id="year" min="1900" max="2021" placeholder="2020">
+                    <input type="number" name="year" id="year" min="1900" max="2021" placeholder="2020"> *
                     <br class="doubleBreak">
                     <!--fuelType-->
                     <label for="fuelType">Type of fuel: </label>
@@ -146,7 +145,7 @@
                         <option value="Petrol">Petrol</option>
                         <option value="diesel">Diesel</option>
                         <option value="Electric">Electric</option>
-                    </select>
+                    </select> *
                     <br class="doubleBreak">
                     <!--transmission-->
                     <label>Select transmission: </label>
