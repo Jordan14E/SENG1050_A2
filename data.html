@@ -3,6 +3,7 @@
         <head>
             <meta charset="UTF-8">
             <link rel= "stylesheet" type = "text/css" href="style.css"/>		<!--Link to css document for styling-->
+            <link type="text/javasccript" href="validation.js"/>
             <title>Jim's Cars - New Listing</title>
         </head>
         <body>
@@ -18,31 +19,31 @@
                 <hr>
                 <br class="doubleBreak">
 
-                <!--TODO: get rid of multiple uses of <br> and use css styling-->
+
             </div>
             <h2>Create a listing</h2>
-            <form method="get" action="http://jkorpela.fi/cgi-bin/echo.cgi" style="width:-moz-fit-content;width:fit-content">
+            <form name="carForm" onsubmit="return checkForm()" method="post" action="http://jkorpela.fi/cgi-bin/echo.cgi" style="width:-moz-fit-content;width:fit-content">
 
                 <fieldset>
                     <legend>Personal Details</legend>
                 <!--Name-->
 
                     <label for="firstName">First Name: </label>
-                    <input type="text" placeholder="First Name" required name="firstName" id="firstName">
+                    <input type="text" placeholder="First Name" name="firstName" id="firstName">
                     <label for="lastName">Last Name: </label>
-                    <input type="text" placeholder="Last Name" name="lastName" id = "lastName" required>
+                    <input type="text" placeholder="Last Name" name="lastName" id = "lastName">
                     <br class="doubleBreak">
 
-                    <!--Address-->
+                    <!--Email address-->
 
                     <label for="email">Email address: </label>
-                   <input type="email" name="email" id="email">
+                   <input type="text" name="email" id="email">
                     <br class="doubleBreak">
 
                     <!--how many previously submitted-->
 
                     <label for="prevSubmitted">Number of previously submitted cars: </label>
-                    <input type="number" placeholder="E.g. 1" required name="prevSubmitted" id="prevSubmitted" min="0" max="1000">
+                    <input type="number" placeholder="E.g. 1"  name="prevSubmitted" id="prevSubmitted" min="0" max="1000">
                     <br class="doubleBreak">
                 </fieldset>
 
@@ -53,12 +54,12 @@
                     <!--Make of car-->
 
                     <label for="make">Car make: </label>
-                    <input type="text" placeholder="E.g. Toyota" required name="make" id="make">
+                    <input type="text" placeholder="E.g. Toyota" name="make" id="make">
                     <br class="doubleBreak">
                     <!--Model of car-->
 
                     <label for="model">Car model: </label>
-                    <input type="text" placeholder="E.g. LandCruiser" required name="model" id="model">
+                    <input type="text" placeholder="E.g. LandCruiser" name="model" id="model">
                     <br class="doubleBreak">
 
                     <!--dropdown box for car type-->
@@ -73,11 +74,11 @@
 
                     <!--odometer reading-->
                     <label for="odometer">Odometer reading: </label>
-                    <input type="number" required name="odometer" id="odometer" min="0" placeholder="10000">
+                    <input type="number"  name="odometer" id="odometer" min="0" placeholder="10000">
                     <br class="doubleBreak">
                     <!--year-->
                     <label for="year">Year of production: </label>
-                    <input type="number" required name="year" id="year" min="1900" max="2021" placeholder="2020">
+                    <input type="number" name="year" id="year" min="1900" max="2021" placeholder="2020">
                     <br class="doubleBreak">
                     <!--fuelType-->
                     <label for="fuelType">Type of fuel: </label>
@@ -146,7 +147,7 @@
                     <!--textfield for description-->
 
                     <label for="description">Give us a short description of your car (max 200 characters): </label>
-                    <textarea rows="5" maxlength="200" required name="description" id="description" placeholder="Please enter description here..."></textarea>
+                    <textarea rows="5" maxlength="200" name="description" id="description" placeholder="Please enter description here..."></textarea>
                     <br class="doubleBreak">
 
                     <!--Price-->
@@ -171,8 +172,6 @@
                     <input type="checkbox" name="coupon" id="coupon">
                     <br class="doubleBreak">
 
-                    <!--other properties and extras-->
-
 
                         <!--State-->
 
@@ -188,8 +187,8 @@
                     </select>
                     <br class="doubleBreak">
 
-                    <!--Unique-->
-                        <!--Has car been used offroad?-->
+
+                    <!--Has car been used offroad?-->
                     <label for="offroad">Has this car been used offroad?</label>
                     <input type="checkbox" name="offroad" id="offroad">
                     <br class="doubleBreak">
@@ -214,7 +213,7 @@
                     <input type="reset" value="Clear form">
                 </fieldset>
 
-                <!--copyright statement-->
+                <!--TODO: copyright statement here-->
 
 
             </form>
