@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <link rel= "stylesheet" type = "text/css" href="style.css"/>		<!--Link to css document for styling-->
+            <title>Jim's Cars - Contact Us</title>
+            <script type="text/javascript">
+
+            </script>
+        </head>
+
+        <body>
+            <div id="head">			<!--Holds page heading, logo and navigation bar-->
+                <img src="Images/logo.png" alt ="logo" id="logo"/>		<!--"Jim's group logo image-->
+                <h1 style= "text-align: center">Contact Us</h1>		<!--Main heading for page-->
+                <hr>
+
+                <a class="link" href="index.html">Home</a>
+                -
+                <a class="link" id="link1" href="XML/fourWheelDrive.xml">Four Wheel Drives</a>		<!--Link to XML document-->
+                -
+                <a class="link" id="link2" href="XML/sportsCar.xml">Sports Cars</a>			<!--Link to XML document-->
+                -
+                <a class="link" id="link3" href="data.html">Create Listing</a>
+                <hr>
+
+                <br class="doubleBreak">
+            </div>
+            <br class="doubleBreak">
+
+            <h2 style="text-align: center;">Ask a question</h2>
+
+            <form method="get" onsubmit="return checkForm()" action="http://jkorpela.fi/cgi-bin/echo.cgi">
+                <!--First name-->
+
+                <label for="firstName">First Name: </label>
+                <input type="text" name="firstName" id="firstName"/> *
+                <br class="doubleBreak"/>
+
+                <!--Last name-->
+                <label for="lastName">Last Name: </label>
+                <input type="text" name="lastName" id="lastName"/> *
+                <br class="doubleBreak"/>
+
+                <!--Email-->
+                <label for="email">Email: </label>
+                <input type="text" name="email" id="email"/> *
+                <br class="doubleBreak"/>
+
+                <!--Phone number-->
+                <label for="phoneNumber">Telephone Number: </label>
+                <input type="text" name="phoneNumber" id="phoneNumber"/> *
+                <br class="doubleBreak"/>
+
+                <!--Submit and clear-->
+
+                <input type="submit" value="Submit">
+                <input style="float: right;" type="reset" value="Clear">
+
+            </form>
+
+            <h2>Our Contact Details</h2>
+        <p>Ph Number: 0123456789<br>
+            Email: c3350651@uon.edu.au<br>
+            Address: 123 Fake Street, Not City, NSW, 1234, Australia</p>
+        </body>
+        <address id="copyright">Copyright - Jordan Eade<br>University of Newcastle<br>c3350651@uon.edu.au<br>		<!--copyright statement-->
+            <!--External website, goes to Assessment 1 brief for SENG1050-->
+            <a href="https://uonline.newcastle.edu.au/bbcswebdav/pid-5239564-dt-content-rid-30198625_1/courses/CRS.134585.2021.S2/SENG1050%20-%20Assignment%202.html#peb">Assessment Brief</a>
+        </address>
+    </html>
