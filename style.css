@@ -126,6 +126,7 @@ a:active{
 #list{
 	border-style:dashed;
 	border-color:burlywood;
+	float: left;
 }
 
 #desDiv{
