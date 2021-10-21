@@ -73,15 +73,48 @@
                 <br>
 
                 <!--checkbox for extras-->
-
+                    <!--Not sure what do add here-->
 
 
 
                 <!--checkbox for whether Jim's cars coupons accepted-->
 
-
+                <label for="coupon">Will you accept Jim's cars coupons?</label>
+                <input type="checkbox" required name="coupon" id="coupon">
+                <br>
 
                 <!--other properties and extras-->
+
+                    <!--odometer reading-->
+                <label for="odometer">Odometer reading: </label>
+                <input type="number" required name="odometer" id="odometer" min="0">
+                <br>
+                    <!--year-->
+                <label for="year">Year of production: </label>
+                <input type="number" required name="year" id="year" min="1900" max="2021">
+                <br>
+                    <!--fuelType-->
+                <label for="fuelType">Type of fuel: </label>
+                <select name="fuelType" id="fuelType">
+                    <option value="Petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="Electric">Electric</option>
+                </select>
+                <br>
+                    <!--transmission-->
+
+
+                    <!--drivetype-->
+                <legend>Select drive type</legend>
+                <label for="4WD">4 Wheel Drive</label>
+                <input type="radio" value="4WD" name="transmission" id="4WD">
+                <label for="2WD">2 Wheel Drive</label>
+                <input type="radio" value="2WD" name="transmission" id="2WD">
+                <label for="AWD">All Wheel Drive</label>
+                <input type="radio" value="AWD" name="transmission" id="AWD">
+                    <!--State-->
+
+
 
                 <!--Unique-->
                     <!--Has car been used offroad?-->
