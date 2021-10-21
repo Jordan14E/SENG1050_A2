@@ -6,19 +6,63 @@
 
             <title>Jim's Cars - New Listing</title>
             <script type="text/javascript">
-                function checkEmail() {
-                    // /^([[:upper:]]|[[:lower:]]|\d|["])([!-?]|[A-~]){1,62}([[:upper:]]|[[:lower:]]|\d|["])[@]([[:upper:]]|[[:lower:]]|\d)([[:upper:]]|[[:lower:]]|\d|[-]|[.]){1,252}[.]([[:upper:]]|[[:lower:]]|[.]|\d){2,62}([[:upper:]]|[[:lower:]])$/gm
-                    var email = document.carForm.email;
-                    var emailreg = /^([a-zA-Z]|\d|["])([!-?]|[A-~]){1,62}([a-zA-Z]|\d|["])[@]([a-zA-Z]|\d)([a-zA-Z]|\d|[.]|[-]){1,252}[.]([a-zA-Z]|\d|[.]){2,62}[a-zA-Z]$/;
 
-                    alert("I did get here");
-                    if (!(email.value.match(emailreg))) {
-                        alert("please enter a valid email address")
+                function checkForm(){
+
+                    if(checkEmail()&&checkYear()&&checkTransmission()){
+                        alert("Thank you for your submission!");
+                        return true;
+                    }
+                    else{
+                        return false
+                    }
+                    alert("Thank you for your submission!");
+                }
+
+                function checkEmail() {
+                    var email = document.carForm.email;
+                    var emailReg = /^([a-zA-Z]|\d|["])([a-zA-Z!#$%&'*+=?^_`{}|.-]|\d){1,62}([a-zA-Z]|\d|["])[@]([a-zA-Z]|\d)([a-zA-Z]|\d|[.]|[-]){1,252}[.]([a-zA-Z]|\d|[.]){2,62}[a-zA-Z]$/;
+
+                    if (!(email.value.match(emailReg))) {
+                        alert("please enter a valid email address E.g. JohnSmith@example.com")
                         return false;
                     } else {
                         return true;
                     }
                 }
+
+                function checkYear(){
+
+                    var year = document.carForm.year;
+                    var yearReg = /^\d{4}$/;
+
+                    if(year.value.match(yearReg)&&year.value<=2021){
+                        return true;
+                    }
+                    else{
+                        alert("please enter a valid year");
+                        return false;
+                    }
+
+
+                }
+
+                function checkTransmission() {
+                    var buttons = document.carForm.transmission;
+
+
+                    if(buttons[1].checked || buttons[2].checked || buttons[3].checked){
+                        alert("i get here");
+                        return true;
+                    }
+                    else{
+                        alert("Please select a transmission")
+                        return false;
+                    }
+
+                }
+
+
             </script>
         </head>
         <body>
@@ -38,7 +82,7 @@
             </div>
             <h2>Create a listing</h2>
             <!--TODO: Styling for form style="width:-moz-fit-content;width:fit-content"-->
-            <form name="carForm"  method="get" onsubmit="return checkEmail()" action="http://jkorpela.fi/cgi-bin/echo.cgi" >
+            <form name="carForm"  method="get" onsubmit="return checkForm()" action="http://jkorpela.fi/cgi-bin/echo.cgi" >
 
                 <fieldset>
                     <legend>Personal Details</legend>
