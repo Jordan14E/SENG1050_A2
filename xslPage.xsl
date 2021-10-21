@@ -32,6 +32,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <xsl:if test="car/@vehicleType = 'sportCar'">
                         <a class="link"  href="fourWheelDrive.xml">Four Wheel Drives</a>
                     </xsl:if>
+                    -
+                    <a class="link" id="link3" href="../data.html">Create Listing</a>
 
                     <!--TODO: Add data collection page here-->
 
