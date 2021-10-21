@@ -35,8 +35,8 @@
 
                     <!--Address-->
 
-                    <label for="address">Address: </label>
-                    <textarea rows=2 required name="address" id="address" placeholder="E.g. 123 Street Name, City, State, Australia"></textarea>
+                    <label for="email">Email address: </label>
+                   <input type="email" name="email" id="email">
                     <br class="doubleBreak">
 
                     <!--how many previously submitted-->
@@ -110,6 +110,33 @@
                     <input type="radio" value="AWD" name="driveType" id="AWD">
                     <br class="doubleBreak">
 
+                    <!--checkbox for extras-->
+
+                    <label for="extra">Are there any extras included?</label>
+                    <input type="checkbox" name="extra" id="extra">
+                    <br class="doubleBreak">
+
+                    <!--Image of car-->
+                    <label for="carIMG">Please insert an image here (either jpeg or png): </label>
+                    <input type="file" name="carIMG" id="carIMG" accept="image/jpeg, image/png">
+                    <br class="doubleBreak">
+
+                    <!--Safety rating-->
+
+                    <label>Select safety rating</label>
+                    <br>
+                    <label for="1star">1 star</label>
+                    <input type="radio" value="1" name="safetyRating" id="1star">
+                    <label for="2star">2 star</label>
+                    <input type="radio" value="2" name="safetyRating" id="2star">
+                    <label for="3star">3 star</label>
+                    <input type="radio" value="3" name="safetyRating" id="3star">
+                    <label for="4star">4 star</label>
+                    <input type="radio" value="4" name="safetyRating" id="4star">
+                    <label for="5star">5 star</label>
+                    <input type="radio" value="5" name="safetyRating" id="5star">
+                    <br class="doubleBreak">
+
                 </fieldset>
 
                 <br class="doubleBreak">
@@ -121,12 +148,6 @@
                     <label for="description">Give us a short description of your car (max 200 characters): </label>
                     <textarea rows="5" maxlength="200" required name="description" id="description" placeholder="Please enter description here..."></textarea>
                     <br class="doubleBreak">
-
-                    <!--checkbox for extras-->
-                        <!--Not sure what do add here-->
-
-
-
 
                     <!--Price-->
 
@@ -147,7 +168,7 @@
                     <!--checkbox for whether Jim's cars coupons accepted-->
 
                     <label for="coupon">Will you accept Jim's cars coupons?</label>
-                    <input type="checkbox" required name="coupon" id="coupon">
+                    <input type="checkbox" name="coupon" id="coupon">
                     <br class="doubleBreak">
 
                     <!--other properties and extras-->
