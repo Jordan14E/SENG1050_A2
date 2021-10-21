@@ -35,31 +35,32 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     -
                     <a class="link" id="link3" href="../data.html">Create Listing</a>
 
-                    <!--TODO: Add data collection page here-->
-
                     <hr/>
                     <br/>
                 </div>
                     <br/>
 
-                <div id="list">
+                <div id="list" style="float:left;">
                 <xsl:apply-templates select="car">
                         <xsl:sort select="carModel"/>
                 </xsl:apply-templates>
                 </div>
-                <!-- TODO: add contact here--><!--maybe?-->
-
             </body>
-            <address>
-
+            <!--TODO: figure out why it won't go down-->
+            <address id="copyright" style="float:left;">Copyright - Jordan Eade<br/>University of Newcastle<br/>c3350651@uon.edu.au<br/>		<!--copyright statement-->
+                <!--External website, goes to Assessment 1 brief for SENG1050-->
+                <a href="https://uonline.newcastle.edu.au/bbcswebdav/pid-5239564-dt-content-rid-30198625_1/courses/CRS.134585.2021.S2/SENG1050%20-%20Assignment%202.html#peb">Assessment Brief</a>
             </address>
         </html>
+
     </xsl:template>
 
-    <!--TODO: can have more than one picture-->
+    <!--TODO: can have more than one picture???-->
     <xsl:template match="car">
         <h2><xsl:value-of select="make"/><xsl:text> </xsl:text><xsl:value-of select="carModel"/><xsl:text>, </xsl:text><xsl:value-of select="year"/></h2>
         <br/>
+
+
         <img alt="Picture not found" class="carPic">
             <xsl:attribute name="src">
                     <xsl:value-of select="picture"/>
@@ -111,8 +112,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:text>Drive type: </xsl:text><xsl:value-of select="driveType"/>
             </li>
 
-            <!--TODO: add extras here-->
 
+            <xsl:for-each select="extras">
+                <li>
+                    <xsl:text>Extra option: </xsl:text><xsl:value-of select="options"/><br/>
+                    <xsl:text>Extra price: </xsl:text><xsl:value-of select="additionalCost"/>
+                </li>
+            </xsl:for-each>
 
             <!--state-->
 
@@ -156,7 +162,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             </a>
             </div>
         </ul>
-        <!--TODO: figure out the spacing for these cars. it looks stupid-->
         <br style="line-height:2cm"/>
+
     </xsl:template>
+
 </xsl:stylesheet>
