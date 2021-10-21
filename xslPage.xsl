@@ -4,7 +4,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:template match="carsForSale">
 
-        <html>
+        <html lang="en">
             <head>
                 <meta charset="UTF-8"/>
                 <link  rel="stylesheet" type ="text/css" href="../style.css"/>		<!--Link to css document for styling-->
@@ -155,6 +155,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             </div>
         </ul>
         <!--TODO: figure out the spacing for these cars. it looks stupid-->
-        <br style="line-height:7cm"/>
+        <br style="line-height:2cm"/>
     </xsl:template>
 </xsl:stylesheet>
