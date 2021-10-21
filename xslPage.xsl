@@ -34,6 +34,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     </xsl:if>
                     -
                     <a class="link" id="link3" href="../data.html">Create Listing</a>
+                    -
+                    <a class="link" id="link4" href="../privacy.html">Privacy policy</a>
 
                     <hr/>
                     <br/>
