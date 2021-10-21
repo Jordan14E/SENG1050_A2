@@ -2,9 +2,81 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel= "stylesheet" type = "text/css" href="style.css"/>		<!--Link to css document for styling-->
+    <title>Jim's Cars - New Listing</title>
 </head>
 <body>
+<div id="head">			<!--Holds page heading, logo and navigation bar-->
+    <img src="Images/logo.png" alt ="logo" id="logo"/>		<!--"Jim's group logo image-->
+    <h1 style= "text-align: center">New listing</h1>		<!--Main heading for page-->
+    <hr>
+    <a class="link" id="link1" href="XML/fourWheelDrive.xml">Four Wheel Drives</a>		<!--Link to XML document-->
+    -
+    <a class="link" id="link2" href="XML/sportsCar.xml">Sports Cars</a>			<!--Link to XML document-->
+    <hr>
+    <br>
+    <br>
+    <!--TODO: get rid of multiple uses of <br> and use css styling-->
+</div>
+<h2>Create a listing on Jim's cars</h2>
+<form method="get" action="http://jkorpela.fi/cgi-bin/echo.cgi" style="width:-moz-fit-content;width:fit-content">
+
+    <!--Name-->
+
+    <label for="firstName">First Name</label>
+    <input type="text" placeholder="First Name" required name="firstName" id="firstName">
+    <label for="lastName">Last Name</label>
+    <input type="text" placeholder="Last Name" name="lastName" id = "lastName" required>
+    <br>
+    <br>
+    <!--Address-->
+
+    <label for="address">Address</label>
+    <textarea rows=5 required name="address" id="address"></textarea>
+    <br><br>
+
+    <!--how many previously submitted-->
+
+    <label for="prevSubmitted">Number of previously submitted cars</label>
+    <input type="number" placeholder="E.g. 1" required name="prevSubmitted" id="prevSubmitted" min="0" max="1000">
+    <br>
+    <!--Is price negotiable?-->
+
+    <label for="negotiable">Is the price negotiable?</label>
+    <input type="radio" required name="negotiable" id="negotiable">
+    <br>
+    <!--End of personal details TODO: add separator here for style-->
+
+    <!--Make of car-->
+
+    <label for="make">Car make</label>
+    <input type="text" placeholder="E.g. Toyota" required name="make" id="make">
+    <br>
+    <!--Model of car-->
+
+    <label for="model">Car model</label>
+    <input type="text" placeholder="E.g. LandCruiser" required name="model" id="model">
+    <br>
+    <!--dropdown box for car type-->
+
+    <!--textfield for description-->
+
+    <!--checkbox for extras-->
+
+    <!--checkbox for whether Jim's cars coupons accepted-->
+
+    <!--other properties and extras-->
+
+    <!--Unique-->
+        <!--Has car been used offroad?-->
+        <!---->
+
+    <!--submit and clear buttons-->
+
+    <!--copyright statement-->
+
+
+</form>
 
 </body>
 </html>

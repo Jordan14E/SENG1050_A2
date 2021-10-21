@@ -54,6 +54,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         </html>
     </xsl:template>
 
+    <!--TODO: can have more than one picture-->
     <xsl:template match="car">
         <h2><xsl:value-of select="make"/><xsl:text> </xsl:text><xsl:value-of select="carModel"/><xsl:text>, </xsl:text><xsl:value-of select="year"/></h2>
         <br/>
@@ -107,6 +108,9 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <li>
             <xsl:text>Drive type: </xsl:text><xsl:value-of select="driveType"/>
             </li>
+
+            <!--TODO: add extras here-->
+
 
             <!--state-->
 
