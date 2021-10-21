@@ -10,117 +10,188 @@
                 <img src="Images/logo.png" alt ="logo" id="logo"/>		<!--"Jim's group logo image-->
                 <h1 style= "text-align: center">New listing</h1>		<!--Main heading for page-->
                 <hr>
+                <a class="link" href="index.html">Home</a>
+                -
                 <a class="link" id="link1" href="XML/fourWheelDrive.xml">Four Wheel Drives</a>		<!--Link to XML document-->
                 -
                 <a class="link" id="link2" href="XML/sportsCar.xml">Sports Cars</a>			<!--Link to XML document-->
                 <hr>
-                <br>
-                <br>
+                <br class="doubleBreak">
+
                 <!--TODO: get rid of multiple uses of <br> and use css styling-->
             </div>
-            <h2>Create a listing on Jim's cars</h2>
+            <h2>Create a listing</h2>
             <form method="get" action="http://jkorpela.fi/cgi-bin/echo.cgi" style="width:-moz-fit-content;width:fit-content">
 
+                <fieldset>
+                    <legend>Personal Details</legend>
                 <!--Name-->
 
-                <label for="firstName">First Name: </label>
-                <input type="text" placeholder="First Name" required name="firstName" id="firstName">
-                <label for="lastName">Last Name: </label>
-                <input type="text" placeholder="Last Name" name="lastName" id = "lastName" required>
-                <br>
-                <br>
-                <!--Address-->
+                    <label for="firstName">First Name: </label>
+                    <input type="text" placeholder="First Name" required name="firstName" id="firstName">
+                    <label for="lastName">Last Name: </label>
+                    <input type="text" placeholder="Last Name" name="lastName" id = "lastName" required>
+                    <br class="doubleBreak">
 
-                <label for="address">Address: </label>
-                <textarea rows=5 required name="address" id="address"></textarea>
-                <br><br>
+                    <!--Address-->
 
-                <!--how many previously submitted-->
+                    <label for="address">Address: </label>
+                    <textarea rows=2 required name="address" id="address" placeholder="E.g. 123 Street Name, City, State, Australia"></textarea>
+                    <br class="doubleBreak">
 
-                <label for="prevSubmitted">Number of previously submitted cars: </label>
-                <input type="number" placeholder="E.g. 1" required name="prevSubmitted" id="prevSubmitted" min="0" max="1000">
-                <br>
-                <!--Is price negotiable?-->
+                    <!--how many previously submitted-->
 
-                <label for="negotiable">Is the price negotiable?</label>
-                <input type="radio" required name="negotiable" id="negotiable">
-                <br>
-                <!--End of personal details TODO: add separator here for style-->
+                    <label for="prevSubmitted">Number of previously submitted cars: </label>
+                    <input type="number" placeholder="E.g. 1" required name="prevSubmitted" id="prevSubmitted" min="0" max="1000">
+                    <br class="doubleBreak">
+                </fieldset>
 
-                <!--Make of car-->
+                <br class="doubleBreak">
 
-                <label for="make">Car make: </label>
-                <input type="text" placeholder="E.g. Toyota" required name="make" id="make">
-                <br>
-                <!--Model of car-->
+                <fieldset>
+                    <legend>Car Specifications</legend>
+                    <!--Make of car-->
 
-                <label for="model">Car model: </label>
-                <input type="text" placeholder="E.g. LandCruiser" required name="model" id="model">
-                <br>
-                <!--dropdown box for car type-->
+                    <label for="make">Car make: </label>
+                    <input type="text" placeholder="E.g. Toyota" required name="make" id="make">
+                    <br class="doubleBreak">
+                    <!--Model of car-->
 
-                <label for="carType">Choose your car type: </label>
-                <select name="carType" id="carType">
-                    <option value="fourWheelDrive">Four Wheel Drive</option>
-                    <option value="sportsCar">Sports Car</option>
-                </select>
-                <br>
+                    <label for="model">Car model: </label>
+                    <input type="text" placeholder="E.g. LandCruiser" required name="model" id="model">
+                    <br class="doubleBreak">
 
-                <!--textfield for description-->
+                    <!--dropdown box for car type-->
 
-                <label for="description">Give us a short description of your car: </label>
-                <textarea rows="5" required name="description" id="description"></textarea>
-                <br>
-
-                <!--checkbox for extras-->
-                    <!--Not sure what do add here-->
-
-
-
-                <!--checkbox for whether Jim's cars coupons accepted-->
-
-                <label for="coupon">Will you accept Jim's cars coupons?</label>
-                <input type="checkbox" required name="coupon" id="coupon">
-                <br>
-
-                <!--other properties and extras-->
+                    <label for="carType">Choose your car type: </label>
+                    <select name="carType" id="carType">
+                        <option>Please select...</option>
+                        <option value="fourWheelDrive">Four Wheel Drive</option>
+                        <option value="sportsCar">Sports Car</option>
+                    </select>
+                    <br class="doubleBreak">
 
                     <!--odometer reading-->
-                <label for="odometer">Odometer reading: </label>
-                <input type="number" required name="odometer" id="odometer" min="0">
-                <br>
+                    <label for="odometer">Odometer reading: </label>
+                    <input type="number" required name="odometer" id="odometer" min="0" placeholder="10000">
+                    <br class="doubleBreak">
                     <!--year-->
-                <label for="year">Year of production: </label>
-                <input type="number" required name="year" id="year" min="1900" max="2021">
-                <br>
+                    <label for="year">Year of production: </label>
+                    <input type="number" required name="year" id="year" min="1900" max="2021" placeholder="2020">
+                    <br class="doubleBreak">
                     <!--fuelType-->
-                <label for="fuelType">Type of fuel: </label>
-                <select name="fuelType" id="fuelType">
-                    <option value="Petrol">Petrol</option>
-                    <option value="diesel">Diesel</option>
-                    <option value="Electric">Electric</option>
-                </select>
-                <br>
+                    <label for="fuelType">Type of fuel: </label>
+                    <select name="fuelType" id="fuelType">
+                        <option>Please select...</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="diesel">Diesel</option>
+                        <option value="Electric">Electric</option>
+                    </select>
+                    <br class="doubleBreak">
                     <!--transmission-->
-
+                    <label>Select transmission: </label>
+                    <br>
+                    <label for="automatic">Automatic</label>
+                    <input type="radio" value="automatic" name="transmission" id="automatic">
+                    <label for="manual">Manual</label>
+                    <input type="radio" value="manual" name="transmission" id="manual">
+                    <label for="single-speed">Single-speed</label>
+                    <input type="radio" value="single-speed" name="transmission" id="single-speed">
+                    <br class="doubleBreak">
 
                     <!--drivetype-->
-                <legend>Select drive type</legend>
-                <label for="4WD">4 Wheel Drive</label>
-                <input type="radio" value="4WD" name="transmission" id="4WD">
-                <label for="2WD">2 Wheel Drive</label>
-                <input type="radio" value="2WD" name="transmission" id="2WD">
-                <label for="AWD">All Wheel Drive</label>
-                <input type="radio" value="AWD" name="transmission" id="AWD">
-                    <!--State-->
+                    <label>Select drive type</label>
+                    <br>
+                    <label for="4WD">4 Wheel Drive</label>
+                    <input type="radio" value="4WD" name="driveType" id="4WD">
+                    <label for="2WD">2 Wheel Drive</label>
+                    <input type="radio" value="2WD" name="driveType" id="2WD">
+                    <label for="AWD">All Wheel Drive</label>
+                    <input type="radio" value="AWD" name="driveType" id="AWD">
+                    <br class="doubleBreak">
+
+                </fieldset>
+
+                <br class="doubleBreak">
+
+                <fieldset>
+                    <legend>Sale Details</legend>
+                    <!--textfield for description-->
+
+                    <label for="description">Give us a short description of your car (max 200 characters): </label>
+                    <textarea rows="5" maxlength="200" required name="description" id="description" placeholder="Please enter description here..."></textarea>
+                    <br class="doubleBreak">
+
+                    <!--checkbox for extras-->
+                        <!--Not sure what do add here-->
 
 
 
-                <!--Unique-->
-                    <!--Has car been used offroad?-->
-                    <!---->
+
+                    <!--Price-->
+
+                    <label for="price">Asking Price: $</label>
+                    <input type="number" step="0.01" min="0.00" name="price" id="price">
+                    <br class="doubleBreak">
+
+                    <!--Is price negotiable?-->
+
+                    <label>Is the price negotiable?</label>
+                    <br>
+                    <label for="Yes">Yes </label>
+                    <input type="radio" value="Yes"  name="negotiable" id="Yes">
+                    <label for="No">No</label>
+                    <input type="radio" value="No"  name="negotiable" id="No">
+                    <br class="doubleBreak">
+
+                    <!--checkbox for whether Jim's cars coupons accepted-->
+
+                    <label for="coupon">Will you accept Jim's cars coupons?</label>
+                    <input type="checkbox" required name="coupon" id="coupon">
+                    <br class="doubleBreak">
+
+                    <!--other properties and extras-->
+
+
+                        <!--State-->
+
+                    <label for="State">State listed: </label>
+                    <select name="State" id="State">
+                        <option>Please select...</option>
+                        <option value="NSW">NSW</option>
+                        <option value="QLD">QLD</option>
+                        <option value="SA">SA</option>
+                        <option value="TAS">TAS</option>
+                        <option value="VIC">VIC</option>
+                        <option value="WA">WA</option>
+                    </select>
+                    <br class="doubleBreak">
+
+                    <!--Unique-->
+                        <!--Has car been used offroad?-->
+                    <label for="offroad">Has this car been used offroad?</label>
+                    <input type="checkbox" name="offroad" id="offroad">
+                    <br class="doubleBreak">
+                        <!--First owner?-->
+                    <label for="owner">Are you the first owner of this car?</label>
+                    <input type="checkbox" name="owner" id="owner">
+                    <br class="doubleBreak">
+                </fieldset>
+
+                <br class="doubleBreak">
+
+                <fieldset>
+                <!--terms and conditions-->
+
+                <label for="terms">Do you agree to our terms and conditions?(<a class="link" href="terms.html">HERE</a>)</label>
+                <input type="checkbox" name="terms" id="terms">
+                <br class="doubleBreak">
 
                 <!--submit and clear buttons-->
+
+                    <input type="submit" value="Submit form">
+                    <input type="reset" value="Clear form">
+                </fieldset>
 
                 <!--copyright statement-->
 
