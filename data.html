@@ -9,35 +9,58 @@
             <meta charset="UTF-8">
             <link rel= "stylesheet" type = "text/css" href="style.css"/>		<!--Link to css document for styling-->
 
-            <title>Jim's Cars - New Listing</title>
-            <script type="text/javascript">
+            <title>Jim's Cars - New Listing</title>     <!--title of page-->
+            <script type="text/javascript">  //start of javascript validation
 
+                //overall validation function will call all other validation functions and
+                // is called by the form when submitting
                 function checkForm(){
-
+                    //if the validations for email, year and fuelType pass
                     if(checkEmail()&&checkYear()&&checkFuelType()){
-                        alert("Thank you for your submission!");
-                        return true;
+                        alert("Thank you for your submission!");    //send a thank you alert
+                        return true;    //return true to pass the data on
                     }
+                    //otherwise return false and don't submit details
                     else{
                         return false
                     }
                 }
 
+                //checkEmail function. Used to validate the email input using a regular expression
                 function checkEmail() {
-                    var email = document.carForm.email;
-                    var emailReg = /^([a-zA-Z]|\d|["])([a-zA-Z!#$%&'*+=?^_`{}|.-]|\d){1,62}([a-zA-Z]|\d|["])[@]([a-zA-Z]|\d)([a-zA-Z]|\d|[.]|[-]){1,252}[.]([a-zA-Z]|\d|[.]){2,62}[a-zA-Z]$/;
 
+                    var email = document.carForm.email; //the email variable to take the input to test
+                    //the variable to hold the regular expression to test against
+                    var emailReg = /^([a-zA-Z]|\d|["])([a-zA-Z!#$%&'*+=?^_`{}|.-]|\d){1,62}([a-zA-Z]|\d|["])[@]([a-zA-Z]|\d)([a-zA-Z]|\d|[.]|[-]){1,252}[.]([a-zA-Z]|\d|[.]){2,62}[a-zA-Z]$/;
+                    /*
+                    note: all letters can be either upper or lower case
+                    regular expression:
+                    first character = letter, number or "
+                    up to the next 62 characters = letter, number or any of the following !#$%&'*+=?^_`{}|.-
+                    character before @ = letter, number or "
+                    @ character
+                    character after @ = letter or number
+                    up to next 252 characters = letter, number, full stop or -
+                    a full stop
+                    up to next 62  but at least next 2 characters = letter, number or .
+                    last character = letter
+                     */
+
+
+                    //if the email does not match the regular expression
                     if (!(email.value.match(emailReg))) {
-                        alert("please enter a valid email address E.g. JohnSmith@example.com")
-                        return false;
-                    } else {
+                        alert("please enter a valid email address E.g. JohnSmith@example.com")  //alert the user
+                        return false;   //return false
+                    }
+                    //other wise return true
+                    else {
                         return true;
                     }
                 }
 
+                //checkYear function is used to validate the form of the year using a regular expression and checking the value
                 function checkYear(){
-
-                    var year = document.carForm.year;
+                    var year = document.carForm.year;   //variable to test the year value
                     var yearReg = /^\d{4}$/;
 
                     if(year.value.match(yearReg)&&year.value<=2021){
