@@ -109,29 +109,29 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
             <!--odometerReading-->
             <li>
-            <xsl:text>Odometer reading: </xsl:text><xsl:value-of select="odometerReading"/> <!--Taking odometer value from xml-->
+                <xsl:text>Odometer reading: </xsl:text><xsl:value-of select="odometerReading"/> <!--Taking odometer value from xml-->
             </li>
             <!--year-->
             <li>
-            <xsl:text>Year of Production: </xsl:text><xsl:value-of select="year"/>  <!--Taking year value from xml-->
+                <xsl:text>Year of Production: </xsl:text><xsl:value-of select="year"/>  <!--Taking year value from xml-->
             </li>
 
             <!--fuelType-->
 
             <li>
-            <xsl:text>Fuel type: </xsl:text><xsl:value-of select="fuelType"/>   <!--Taking fuelType value from xml-->
+                <xsl:text>Fuel type: </xsl:text><xsl:value-of select="fuelType"/>   <!--Taking fuelType value from xml-->
             </li>
 
             <!--transmission-->
 
             <li>
-            <xsl:text>Transmission: </xsl:text><xsl:value-of select="transmission"/>    <!--Taking transmission value from xml-->
+                <xsl:text>Transmission: </xsl:text><xsl:value-of select="transmission"/>    <!--Taking transmission value from xml-->
             </li>
 
             <!--driveType-->
 
             <li>
-            <xsl:text>Drive type: </xsl:text><xsl:value-of select="driveType"/>     <!--Taking driveType value from xml-->
+                <xsl:text>Drive type: </xsl:text><xsl:value-of select="driveType"/>     <!--Taking driveType value from xml-->
             </li>
 
 
@@ -142,10 +142,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 </li>
             </xsl:for-each>
 
+            <!--NUmber of seats-->
+            <li>
+                <xsl:text>Number of seats: </xsl:text><xsl:value-of select="@noSeats"/> <!--Taking noSeats vale from xml-->
+            </li>
             <!--state-->
 
             <li>
-            <xsl:text>State listed: </xsl:text><xsl:value-of select="state"/>   <!--Taking state value from xml-->
+                <xsl:text>State listed: </xsl:text><xsl:value-of select="state"/>   <!--Taking state value from xml-->
             </li>
 
             <!--couponCode-->
@@ -170,21 +174,21 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <!--description-->
 
             <div id="desDiv">
-            <xsl:value-of select="description"/>        <!--Take description value from xml-->
-            <br id="doubleBR"/>
+                <xsl:value-of select="description"/>        <!--Take description value from xml-->
+                <br id="doubleBR"/>
 
                 <!--link to manufacturer website-->
 
-            <xsl:text>Detailed information on this car can be found on the manufacturer's website:
-            </xsl:text>
+                <xsl:text>Detailed information on this car can be found on the manufacturer's website:
+                </xsl:text>
                 <!--Inserting link-->
-            <a class="link">
+                <a class="link">
                 <!--Using xsl:attribute to enter value from xml into the href attribute-->
                 <xsl:attribute name="href">
                     <xsl:value-of select="URL"/>    <!--Take URL value from xml-->
                 </xsl:attribute>
-            <xsl:value-of select="URL"/>
-            </a>
+                <xsl:value-of select="URL"/>
+                </a>
             </div>
         </ul>
         <br style="line-height:2cm"/>   <!--Use in-line style to extend spacing-->
