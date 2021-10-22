@@ -40,8 +40,8 @@
 		<!ENTITY e "Electric">		<!--Entity for electric to abbreviate-->
 		]>
 
-
-<carsForSale>		<!--Did not include the optional couponCode or review elements in any cars-->
+<!--Did not include the optional couponCode or review elements in any cars-->
+<carsForSale>
 	<car noSeats="7" vehicleType="fourWheelDrive">	<!--Opening tag for car. Includes attributes-->
 		<make>Land Rover</make>		<!--Inserting make of car-->
 		<carModel>Discovery</carModel>	<!--Inserting model of car-->
@@ -64,7 +64,7 @@
 		<transmission>8-speed automatic</transmission>		<!--Inserting transmission of car-->
 		<driveType>4-wheel drive</driveType>		<!--Inserting drive type of car-->
 		<state>NSW</state>		<!--Inserting state car was listed-->
-		<picture>../Images/landRover.png</picture>	`<!--Inserting picture of car-->
+		<picture>../Images/landRover.png</picture>	<!--Inserting picture of car-->
 		<URL>https://www.landrover.com.au/vehicles/discovery/index.html</URL>	<!--Inserting manufacturer's URl of car-->
 	</car>
 	
