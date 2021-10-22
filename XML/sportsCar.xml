@@ -4,113 +4,118 @@
 	Author: Jordan Eade
 	Student Number: c3350651
 	Date file created: 20/10/21-->
-	<!DOCTYPE carsForSale	[
-		<!ELEMENT carsForSale (car*)>
-			<!ELEMENT car (make, carModel, description, cost, safetyRating, extras+, odometerReading, year, fuelType, transmission, driveType, state, couponCode?, reviews*, picture+, URL)>
-				<!ELEMENT make (#PCDATA)>
-				<!ELEMENT carModel (#PCDATA)>
-				<!ELEMENT description (#PCDATA)>
-				<!ELEMENT cost (#PCDATA)>
-				<!ELEMENT safetyRating (star1|star2|star3|star4|star5)>
-					<!ELEMENT star1 (#PCDATA)>
-					<!ELEMENT star2 (#PCDATA)>
-					<!ELEMENT star3 (#PCDATA)>
-					<!ELEMENT star4 (#PCDATA)>
-					<!ELEMENT star5 (#PCDATA)>
-				<!ELEMENT extras (options, additionalCost)>
-					<!ELEMENT options (#PCDATA)>
-					<!ELEMENT additionalCost (#PCDATA)>
-				<!ELEMENT odometerReading (#PCDATA)>
-				<!ELEMENT year (#PCDATA)>
-				<!ELEMENT fuelType (#PCDATA)>
-				<!ELEMENT transmission (#PCDATA)>
-				<!ELEMENT driveType (#PCDATA)>
-				<!ELEMENT state (#PCDATA)>
-				<!ELEMENT couponCode (#PCDATA)>
-				<!ELEMENT reviews (#PCDATA)>
-				<!ELEMENT picture (#PCDATA)>
-				<!ELEMENT URL (#PCDATA)>
-		<!ATTLIST car noSeats CDATA #REQUIRED>
-		<!ATTLIST car vehicleType (sportCar|fourWheelDrive) #REQUIRED>
-		<!ENTITY p "Petrol">
-		<!ENTITY d "diesel">
-		<!ENTITY e "Electric">
+<!--Start of DTD-->
+<!DOCTYPE carsForSale	[
+		<!ELEMENT carsForSale (car*)>	<!--overarching tag for xml document-->
+		<!ELEMENT car (make, carModel, description, cost, safetyRating, extras+, odometerReading, year, fuelType, transmission, driveType, state, couponCode?, reviews*, picture+, URL)>
+		<!ELEMENT make (#PCDATA)>	<!--Tag to hold the make of car-->
+		<!ELEMENT carModel (#PCDATA)>	<!--Tag to hold model of car-->
+		<!ELEMENT description (#PCDATA)>	<!--Tage to hold description-->
+		<!ELEMENT cost (#PCDATA)>		<!--Tag to hold cost-->
+		<!ELEMENT safetyRating (star1|star2|star3|star4|star5)>		<!--tag to store safetyRating. Uses children to determine the value-->
+		<!--Values for safetyRating-->
+		<!ELEMENT star1 (#PCDATA)>
+		<!ELEMENT star2 (#PCDATA)>
+		<!ELEMENT star3 (#PCDATA)>
+		<!ELEMENT star4 (#PCDATA)>
+		<!ELEMENT star5 (#PCDATA)>
+		<!ELEMENT extras (options, additionalCost)>		<!--tag to hold extras. Can have one or more-->
+		<!ELEMENT options (#PCDATA)>			<!--Tag to hold options. Is the name of the extra-->
+		<!ELEMENT additionalCost (#PCDATA)>		<!--Tag to hold the price of the extra-->
+		<!ELEMENT odometerReading (#PCDATA)>		<!--tag to hold odometer reading of car-->
+		<!ELEMENT year (#PCDATA)>			<!--tag to hold the year the car was produced-->
+		<!ELEMENT fuelType (#PCDATA)>		<!--Tag to hold the type of fuel used for the car-->
+		<!ELEMENT transmission (#PCDATA)>		<!--tag to hold the type of transmission-->
+		<!ELEMENT driveType (#PCDATA)>			<!--tag to hole the drive type (whether 4wd or 2wd or rear wd etc.)-->
+		<!ELEMENT state (#PCDATA)>		<!--Tag to hold the state the car is listed in-->
+		<!ELEMENT couponCode (#PCDATA)>		<!--Tag to hold the coupon ode valid for the car. is optional and can only hold 1 at most-->
+		<!ELEMENT reviews (#PCDATA)>		<!--tag to hold reviews. is optional and can hold up to infinity-->
+		<!ELEMENT picture (#PCDATA)>		<!--Tag to hold picture of car. Can have 1 or more pictures-->
+		<!ELEMENT URL (#PCDATA)>			<!--Tag to hold URL for manufacturer-->
+		<!ATTLIST car noSeats CDATA #REQUIRED>		<!--Attribute of car tag to hold number of seats. Is required-->
+		<!ATTLIST car vehicleType (sportCar|fourWheelDrive) #REQUIRED>	<!--Attribute of car tage determining the type of car. Is required-->
+		<!ENTITY p "Petrol">		<!--Entity for petrol to abbreviate-->
+		<!ENTITY d "diesel">		<!--Entity for diesel to abbreviate-->
+		<!ENTITY e "Electric">		<!--Entity for electric to abbreviate-->
 		]>
 
 <carsForSale>		<!--Did not include the optional couponCode or review elements in any cars-->
-	<car noSeats= "5" vehicleType="sportCar">
-		<make>Subaru</make>
-		<carModel>WRX</carModel>
+	<car noSeats= "5" vehicleType="sportCar">	<!--Opening tag for car. Includes attributes-->
+		<make>Subaru</make>		<!--Inserting make of car-->
+		<carModel>WRX</carModel>	<!--Inserting model of car-->
+		<!--Inserting description of car-->
 		<description>Subaru wrx 2019, great condition, has full service history, only one owner. Looking for asking price 
 		or swap for something bigger as have young family. Thank you</description>
-		<cost>$52,640</cost>
-		<safetyRating><star5/></safetyRating>
-		<extras>
-			<options>Styling pack</options>
-			<additionalCost>$3,029.56</additionalCost>
+		<cost>$52,640</cost>		<!--Inserting cost of car-->
+		<safetyRating><star5/></safetyRating>		<!--Inserting safety rating of car-->
+		<extras>	<!--Inserting extras of car-->
+			<options>Styling pack</options>		<!--Inserting options child of extras-->
+			<additionalCost>$3,029.56</additionalCost>	<!--Inserting additional cost child of extras-->
 		</extras>
-		<extras>
-			<options>Short throw shifter</options>
-			<additionalCost>$695.83</additionalCost>
+		<extras>	<!--Inserting extras of car-->
+			<options>Short throw shifter</options>		<!--Inserting options child of extras-->
+			<additionalCost>$695.83</additionalCost>	<!--Inserting additional cost child of extras-->
 		</extras>
-		<odometerReading>50,000</odometerReading>
-		<year>2019</year>
-		<fuelType>&p;</fuelType>
-		<transmission>6-speed manual</transmission>
-		<driveType>All-wheel Drive</driveType>
-		<state>NSW</state>
-		<picture>../Images/subaru.png</picture>
-		<URL>https://www.subaru.com.au/wrx-and-wrx-sti</URL>
+		<odometerReading>50,000</odometerReading>	<!--Inserting odometer reading of car-->
+		<year>2019</year>		<!--Inserting production year of car-->
+		<fuelType>&p;</fuelType>		<!--Inserting fuel type of car-->
+		<transmission>6-speed manual</transmission>	<!--Inserting transmission of car-->
+		<driveType>All-wheel Drive</driveType>	<!--Inserting drive type of car-->
+		<state>NSW</state>		<!--Inserting state car was listed-->
+		<picture>../Images/subaru.png</picture>	<!--Inserting picture of car-->
+		<URL>https://www.subaru.com.au/wrx-and-wrx-sti</URL>	<!--Inserting manufacturer's URl of car-->
 	</car>
 
-	<car noSeats= "2" vehicleType="sportCar">
-		<make>Ferrari</make>
-		<carModel>Spider 488</carModel>
+	<car noSeats= "2" vehicleType="sportCar">	<!--Opening tag for car. Includes attributes-->
+		<make>Ferrari</make>		<!--Inserting make of car-->
+		<carModel>Spider 488</carModel>		<!--Inserting model of car-->
+		<!--Inserting description of car-->
 		<description>Ferrari spider 488 2020, great condition, has full service history, only one owner. 
 		Serious enquiries only. Thank you</description>
-		<cost>$490,000</cost>
-		<safetyRating><star5/></safetyRating>
-		<extras>
-			<options>Passenger display</options>
-			<additionalCost>$1,000</additionalCost>
+		<cost>$490,000</cost>		<!--Inserting cost of car-->
+		<safetyRating><star5/></safetyRating>		<!--Inserting safety rating of car-->
+		<extras>	<!--Inserting extras of car-->
+			<options>Passenger display</options>		<!--Inserting options child of extras-->
+			<additionalCost>$1,000</additionalCost>	<!--Inserting additional cost child of extras-->
 		</extras>
-		<extras>
-			<options>Front suspension lift</options>
-			<additionalCost>$1,500</additionalCost>
+		<extras>	<!--Inserting extras of car-->
+			<options>Front suspension lift</options>		<!--Inserting options child of extras-->
+			<additionalCost>$1,500</additionalCost>	<!--Inserting additional cost child of extras-->
 		</extras>
-		<odometerReading>20,000</odometerReading>
-		<year>2020</year>
-		<fuelType>&p;</fuelType>
-		<transmission>7-speed F1 dual clutch</transmission>
-		<driveType>Rear-wheel drive</driveType>
-		<state>VIC</state>
-		<picture>../Images/Ferrari.png</picture>
-		<URL>https://www.ferrari.com/en-EN/auto/488-spider</URL>
+		<odometerReading>20,000</odometerReading>	<!--Inserting odometer reading of car-->
+		<year>2020</year>		<!--Inserting production year of car-->
+		<fuelType>&p;</fuelType>		<!--Inserting fuel type of car-->
+		<transmission>7-speed F1 dual clutch</transmission>	<!--Inserting transmission of car-->
+		<driveType>Rear-wheel drive</driveType>	<!--Inserting drive type of car-->
+		<state>VIC</state>		<!--Inserting state car was listed-->
+		<picture>../Images/Ferrari.png</picture>	<!--Inserting picture of car-->
+		<URL>https://www.ferrari.com/en-EN/auto/488-spider</URL>	<!--Inserting manufacturer's URl of car-->
 	</car>
 	
-	<car noSeats= "5" vehicleType="sportCar">
-		<make>Toyota</make>
-		<carModel>Supra GT</carModel>
+	<car noSeats= "5" vehicleType="sportCar">	<!--Opening tag for car. Includes attributes-->
+		<make>Toyota</make>		<!--Inserting make of car-->
+		<carModel>Supra GT</carModel>		<!--Inserting model of car-->
+		<!--Inserting description of car-->
 		<description>Toyota Supra GT 2019, great condition, has full service history, only one owner. 
 		Serious enquiries only. Thank you</description>
-		<cost>$93,755</cost>
-		<safetyRating><star5/></safetyRating>
-		<extras>
-			<options>Welcome light</options>
-			<additionalCost>$500</additionalCost>
+		<cost>$93,755</cost>		<!--Inserting cost of car-->
+		<safetyRating><star5/></safetyRating>		<!--Inserting safety rating of car-->
+		<extras>	<!--Inserting extras of car-->
+			<options>Welcome light</options>	<!--Inserting options child of extras-->
+			<additionalCost>$500</additionalCost>	<!--Inserting additional cost child of extras-->
 		</extras>
-		<extras>
-			<options>Carbon fiber mirror caps</options>
-			<additionalCost>$200</additionalCost>
+		<extras>	<!--Inserting extras of car-->
+			<options>Carbon fiber mirror caps</options>		<!--Inserting options child of extras-->
+			<additionalCost>$200</additionalCost>	<!--Inserting additional cost child of extras-->
 		</extras>
-		<odometerReading>50,000</odometerReading>
-		<year>2019</year>
-		<fuelType>&p;</fuelType>
-		<transmission>6-speed manual</transmission>
-		<driveType>Rear-wheel drive</driveType>
-		<state>QLD</state>
-		<picture>../Images/supra.png</picture>
-		<URL>https://www.toyota.com.au/supra</URL>
+		<odometerReading>50,000</odometerReading>	<!--Inserting odometer reading of car-->
+		<year>2019</year>		<!--Inserting production year of car-->
+		<fuelType>&p;</fuelType>		<!--Inserting fuel type of car-->
+		<transmission>6-speed manual</transmission>	<!--Inserting transmission of car-->
+		<driveType>Rear-wheel drive</driveType>	<!--Inserting drive type of car-->
+		<state>QLD</state>		<!--Inserting state car was listed-->
+		<picture>../Images/supra.png</picture>	<!--Inserting picture of car-->
+		<URL>https://www.toyota.com.au/supra</URL>	<!--Inserting manufacturer's URl of car-->
 	</car>
 </carsForSale>
 
