@@ -27,15 +27,21 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <a class="link" href="../index.html">Home</a>
                     -
                     <xsl:if test="car/@vehicleType = 'fourWheelDrive'">
-                        <a class="link"  href="sportsCar.xml">Sports Cars</a>
+                        <a class="link" href="sportsCar.xml">Sports Cars</a>
                     </xsl:if>
                     <xsl:if test="car/@vehicleType = 'sportCar'">
-                        <a class="link"  href="fourWheelDrive.xml">Four Wheel Drives</a>
+                        <a class="link" href="fourWheelDrive.xml">Four Wheel Drives</a>
                     </xsl:if>
                     -
-                    <a class="link" id="link3" href="../data.html">Create Listing</a>
+                    <a class="link" href="../data.html">Create Listing</a>
                     -
-                    <a class="link" id="link4" href="../privacy.html">Privacy policy</a>
+                    <a class="link" href="../privacy.html">Privacy policy</a>
+                    -
+                    <a class="link" href="../terms.html"><![CDATA[Terms & Conditions]]></a>
+                    -
+                    <a class="link" href="../contact.html">Contact Us</a>
+                    -
+                    <a class="link" href="../aboutUs.html">About Us</a>
 
                     <hr/>
                     <br/>
