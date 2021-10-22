@@ -44,6 +44,7 @@
                     a full stop
                     up to next 62  but at least next 2 characters = letter, number or .
                     last character = letter
+                    created using guidelines from the link in README.txt
                      */
 
 
@@ -61,11 +62,17 @@
                 //checkYear function is used to validate the form of the year using a regular expression and checking the value
                 function checkYear(){
                     var year = document.carForm.year;   //variable to test the year value
-                    var yearReg = /^\d{4}$/;
+                    var yearReg = /^\d{4}$/;        //variable to hold the regular expression for the year
+                    /*
+                    must be 4 digits
+                     */
 
+
+                    //if the yeah matches the regular expression and is less than 2021
                     if(year.value.match(yearReg)&&year.value<=2021){
-                        return true;
+                        return true;    //return true
                     }
+                    //otherwise alert the user and don't submit
                     else{
                         alert("please enter a valid year");
                         return false;
@@ -74,14 +81,16 @@
 
                 }
 
+                //checkFuelType function is used to check that a fuelType has been selected properly in the form
                 function checkFuelType() {
-                    var select = document.carForm.fuelType;
+                    var select = document.carForm.fuelType;     //variable to hold the fuelType to test
 
-
+                    //if the value selected is the default then alert the user and don't submit
                     if(select.value == "Please select...") {
                         alert("Please select a fuel type")
                         return false;
                     }
+                    //otherwise return true
                     else{
                         return true;
                     }
@@ -102,64 +111,68 @@
                 -
                 <a class="link" id="link2" href="XML/sportsCar.xml">Sports Cars</a>			<!--Link to XML document-->
                 -
-                <a class="link" id="link4" href="privacy.html">Privacy policy</a>
+                <a class="link" id="link4" href="privacy.html">Privacy policy</a>   <!--Link to privacy policy page-->
                 -
-                <a class="link" id="link5" href="terms.html">Terms & Conditions</a>
+                <a class="link" id="link5" href="terms.html">Terms & Conditions</a>     <!--Link to terms and conditions page-->
                 -
-                <a class="link" id="link6" href="contact.html">Contact Us</a>
+                <a class="link" id="link6" href="contact.html">Contact Us</a>   <!--Link to contact page-->
                 -
-                <a class="link" id="link7" href="aboutUs.html">About Us</a>
+                <a class="link" id="link7" href="aboutUs.html">About Us</a>     <!--Link to about page-->
                 <hr>
                 <br class="doubleBreak">
 
 
             </div>
-            <h2>Create a listing</h2>
+            <h2>Create a listing</h2>   <!--Sub heading for form-->
             <form name="carForm"  method="get" onsubmit="return checkForm()" action="http://jkorpela.fi/cgi-bin/echo.cgi" >
+                <!--^^ opening tag for form, will submit details to the url after it has used the javascript functions to validate-->
 
+                <!--Personal Details division-->
                 <fieldset>
                     <legend>Personal Details</legend>
                 <!--Name-->
 
                     <label for="firstName">First Name: </label>
-                    <input type="text" placeholder="First Name" name="firstName" id="firstName">
+                    <input type="text" placeholder="First Name" name="firstName" id="firstName">    <!--Text box for name-->
                     <label for="lastName">Last Name: </label>
-                    <input type="text" placeholder="Last Name" name="lastName" id = "lastName">
+                    <input type="text" placeholder="Last Name" name="lastName" id = "lastName">     <!--text box for name-->
                     <br class="doubleBreak">
 
                     <!--Email address-->
 
                     <label for="email">Email address: </label>
-                   <input type="text" name="email" id="email"> *
+                   <input type="text" name="email" id="email"> *    <!--Text box for email and is marked with asterisk for required-->
                     <br class="doubleBreak">
 
                     <!--how many previously submitted-->
 
                     <label for="prevSubmitted">Number of previously submitted cars: </label>
+                    <!--number field for number previously submited-->
                     <input type="number" placeholder="E.g. 1"  name="prevSubmitted" id="prevSubmitted" min="0" max="1000">
                     <br class="doubleBreak">
                 </fieldset>
 
                 <br class="doubleBreak">
 
+                <!--Car specifications division-->
                 <fieldset>
                     <legend>Car Specifications</legend>
                     <!--Make of car-->
 
                     <label for="make">Car make: </label>
-                    <input type="text" placeholder="E.g. Toyota" name="make" id="make">
+                    <input type="text" placeholder="E.g. Toyota" name="make" id="make"> <!--Text box for make of car-->
                     <br class="doubleBreak">
                     <!--Model of car-->
 
                     <label for="model">Car model: </label>
-                    <input type="text" placeholder="E.g. LandCruiser" name="model" id="model">
+                    <input type="text" placeholder="E.g. LandCruiser" name="model" id="model">  <!--Text box for model of car-->
                     <br class="doubleBreak">
 
                     <!--dropdown box for car type-->
 
                     <label for="carType">Choose your car type: </label>
-                    <select name="carType" id="carType">
-                        <option>Please select...</option>
+                    <select name="carType" id="carType">    <!--Dropdown box for carType-->
+                        <option>Please select...</option>   <!--Default option-->
                         <option value="fourWheelDrive">Four Wheel Drive</option>
                         <option value="sportsCar">Sports Car</option>
                     </select>
@@ -167,24 +180,30 @@
 
                     <!--odometer reading-->
                     <label for="odometer">Odometer reading: </label>
+                    <!--Number field for odometer reading-->
                     <input type="number"  name="odometer" id="odometer" min="0" placeholder="10000">
                     <br class="doubleBreak">
+
                     <!--year-->
                     <label for="year">Year of production: </label>
+                    <!--Number fied for year. steps max at 2021 and min at 1900-->
                     <input type="number" name="year" id="year" min="1900" max="2021" placeholder="2020"> *
                     <br class="doubleBreak">
+
                     <!--fuelType-->
                     <label for="fuelType">Type of fuel: </label>
-                    <select name="fuelType" id="fuelType">
-                        <option>Please select...</option>
+                    <select name="fuelType" id="fuelType">  <!--Drop down box for fuelType-->
+                        <option>Please select...</option>   <!--Default option-->
                         <option value="Petrol">Petrol</option>
                         <option value="diesel">Diesel</option>
                         <option value="Electric">Electric</option>
                     </select> *
                     <br class="doubleBreak">
+
                     <!--transmission-->
                     <label>Select transmission: </label>
                     <br>
+                    <!--List of radio buttons for transmission-->
 
                     <input type="radio" value="automatic" name="transmission" id="automatic">
                     <label for="automatic">Automatic</label>
@@ -200,6 +219,7 @@
                     <!--drivetype-->
                     <label>Select drive type</label>
                     <br>
+                    <!--list of radio buttons for drive type-->
 
                     <input type="radio" value="4WD" name="driveType" id="4WD">
                     <label for="4WD">4 Wheel Drive</label>
@@ -215,11 +235,12 @@
                     <!--checkbox for extras-->
 
                     <label for="extra">Are there any extras included?</label>
-                    <input type="checkbox" name="extra" id="extra">
+                    <input type="checkbox" name="extra" id="extra"> <!--checkbox to state whether any extras. (wasn't really sure about spec and I thought this is what was meant)-->
                     <br class="doubleBreak">
 
                     <!--Image of car-->
                     <label for="carIMG">Please insert an image here (either jpeg or png): </label>
+                    <!--file field that only accepts jpeg and png for image of car-->
                     <input type="file" name="carIMG" id="carIMG" accept="image/jpeg, image/png">
                     <br class="doubleBreak">
 
@@ -227,6 +248,7 @@
 
                     <label>Select safety rating</label>
                     <br>
+                    <!--list of radio buttons for safety rating-->
 
                     <input type="radio" value="1" name="safetyRating" id="1star">
                     <label for="1star">1 star</label>
@@ -249,10 +271,11 @@
 
                 <br class="doubleBreak">
 
+                <!--Sale detail division-->
                 <fieldset>
                     <legend>Sale Details</legend>
-                    <!--textfield for description-->
 
+                    <!--textfield for description-->
                     <label for="description">Give us a short description of your car (max 200 characters): </label>
                     <textarea rows="5" maxlength="200" name="description" id="description" placeholder="Please enter description here..."></textarea>
                     <br class="doubleBreak">
@@ -260,14 +283,14 @@
                     <!--Price-->
 
                     <label for="price">Asking Price: $</label>
+                    <!--Number field for price. Will step by 0.01 and has a minimum of 0 for steps-->
                     <input type="number" step="0.01" min="0.00" name="price" id="price">
                     <br class="doubleBreak">
 
                     <!--Is price negotiable?-->
-
                     <label>Is the price negotiable?</label>
                     <br>
-
+                    <!--list of radio buttons for price negotiable. This is an added option and is the binary choice-->
                     <input type="radio" value="Yes"  name="negotiable" id="Yes" checked>
                     <label for="Yes">Yes </label>
 
@@ -277,17 +300,15 @@
                     <br class="doubleBreak">
 
                     <!--checkbox for whether Jim's cars coupons accepted-->
-
                     <label for="coupon">Will you accept Jim's cars coupons?</label>
                     <input type="checkbox" name="coupon" id="coupon">
                     <br class="doubleBreak">
 
 
                         <!--State-->
-
                     <label for="State">State listed: </label>
-                    <select name="State" id="State">
-                        <option>Please select...</option>
+                    <select name="State" id="State">    <!--dropdown box to select state-->
+                        <option>Please select...</option>   <!--default option-->
                         <option value="NSW">NSW</option>
                         <option value="QLD">QLD</option>
                         <option value="SA">SA</option>
@@ -300,31 +321,34 @@
 
                     <!--Has car been used offroad?-->
                     <label for="offroad">Has this car been used offroad?</label>
-                    <input type="checkbox" name="offroad" id="offroad">
+                    <input type="checkbox" name="offroad" id="offroad"> <!--checkbox for car used offroad. Is an added field-->
                     <br class="doubleBreak">
+
                         <!--First owner?-->
                     <label for="owner">Are you the first owner of this car?</label>
-                    <input type="checkbox" name="owner" id="owner">
+                    <input type="checkbox" name="owner" id="owner"> <!--checkbox for first owner. Is an added field-->
                     <br class="doubleBreak">
                 </fieldset>
 
                 <br class="doubleBreak">
 
+                <!--setting up division for terms and conditions and submit, reset buttons-->
                 <fieldset>
                 <!--terms and conditions-->
-
+                    <!--has link to terms and conditions page in the label-->
                 <label for="terms">Do you agree to our terms and conditions?(<a class="link" href="terms.html">HERE</a>)</label>
-                <input type="checkbox" name="terms" id="terms">
+                <input type="checkbox" name="terms" id="terms"> <!--checkbox for terms and conditions. is an added field-->
                 <br class="doubleBreak">
 
                 <!--submit and clear buttons-->
-
                     <input type="submit" value="Submit form">
                     <input type="reset" value="Clear form">
                 </fieldset>
             </form>
+
+            <!--formatting for address section-->
             <address id="copyright">Copyright - Jordan Eade<br>University of Newcastle<br>c3350651@uon.edu.au<br>		<!--copyright statement-->
-                <!--External website, goes to Assessment 1 brief for SENG1050-->
+                <!--External website, goes to Assessment 2 brief for SENG1050-->
                 <a href="https://uonline.newcastle.edu.au/bbcswebdav/pid-5239564-dt-content-rid-30198625_1/courses/CRS.134585.2021.S2/SENG1050%20-%20Assignment%202.html#peb">Assessment Brief</a>
             </address>
         </body>

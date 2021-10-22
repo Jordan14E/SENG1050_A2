@@ -42,3 +42,5 @@ External sources:
 	Template for privacy policy - https://www.visser.com.au/blog/generic-privacy-policy-for-australian-websites/
 
 	Choose when tutorial w3 schools - https://www.w3schools.com/xml/xsl_choose.asp
+
+	Email character rules - https://help.returnpath.com/hc/en-us/articles/220560587-What-are-the-rules-for-email-address-syntax-
