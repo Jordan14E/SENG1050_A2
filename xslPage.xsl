@@ -58,8 +58,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <a href="https://uonline.newcastle.edu.au/bbcswebdav/pid-5239564-dt-content-rid-30198625_1/courses/CRS.134585.2021.S2/SENG1050%20-%20Assignment%202.html#peb">Assessment Brief</a>
                 </address>
             </body>
-
-
         </html>
 
     </xsl:template>
