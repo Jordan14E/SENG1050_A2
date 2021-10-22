@@ -9,7 +9,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                 <meta charset="UTF-8"/>
                 <link  rel="stylesheet" type ="text/css" href="../style.css"/>		<!--Link to css document for styling-->
                 <style>
-                    html{background-image: url("../Images/background.png");}
+                    #desDiv{font-size: larger;}
                 </style>
                 <title><xsl:text>Jim's cars- </xsl:text><xsl:value-of select="car/@vehicleType"/></title>		<!--Document title-->
             </head>
